@@ -62,15 +62,7 @@ class StackedBarChartViewController: DemoBaseViewController {
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .top
         
-        let l = chartView.legend
-        l.horizontalAlignment = .right
-        l.verticalAlignment = .bottom
-        l.orientation = .horizontal
-        l.drawInside = false
-        l.form = .square
-        l.formToTextSpace = 4
-        l.xEntrySpace = 6
-//        chartView.legend = l
+        chartView.legend.enabled = false
 
         sliderX.value = 12
         sliderY.value = 100
