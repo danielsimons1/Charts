@@ -52,6 +52,7 @@ class StackedBarChartViewController: DemoBaseViewController {
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = false
         chartView.highlightFullBarEnabled = false
+        chartView.drawRoundedBarEnabled = true
         
         let leftAxis = chartView.leftAxis
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
@@ -94,6 +95,7 @@ class StackedBarChartViewController: DemoBaseViewController {
         set.drawIconsEnabled = false
         set.colors = [ChartColorTemplates.material()[0], ChartColorTemplates.material()[1], ChartColorTemplates.material()[2]]
         set.stackLabels = ["Births", "Divorces", "Marriages"]
+        set.barRoundingCorners = [.topLeft, .topRight]
         
         let data = BarChartData(dataSet: set)
         data.setValueFont(.systemFont(ofSize: 7, weight: .light))

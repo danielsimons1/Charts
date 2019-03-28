@@ -126,6 +126,16 @@ open class BarChartDataSet: BarLineScatterCandleBubbleChartDataSet, IBarChartDat
         return _stackSize > 1 ? true : false
     }
     
+    public func isStackedTop(atIndex index: Int) -> Bool
+    {
+        var index = index
+        if index < 0
+        {
+            index = 0
+        }
+        return index % stackSize == stackSize - 1
+    }
+    
     /// The overall entry count, including counting each stack-value individually
     @objc open var entryCountStacks: Int
     {

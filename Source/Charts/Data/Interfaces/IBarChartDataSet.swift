@@ -25,6 +25,8 @@ public protocol IBarChartDataSet: IBarLineScatterCandleBubbleChartDataSet
     /// The maximum number of bars that can be stacked upon another in this DataSet.
     var stackSize: Int { get }
     
+    func isStackedTop(atIndex index: Int) -> Bool
+    
     /// the color used for drawing the bar-shadows. The bar shadows is a surface behind the bar that indicates the maximum value
     var barShadowColor: NSUIColor { get set }
     
