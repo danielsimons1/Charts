@@ -824,7 +824,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 
                 setHighlightDrawPos(highlight: high, barRect: barRect)
                 
-                if dataProvider.isDrawRoundedBarEnabled
+                if dataProvider.isDrawRoundedBarEnabled && set.isStackedTop(atIndex: high.stackIndex + (set.stackSize * set.entryIndex(entry: e)))
                 {
                     let cornerRadius = CGSize(width: barRect.width / 6.0, height: barRect.width / 6.0)
                     #if os(OSX)

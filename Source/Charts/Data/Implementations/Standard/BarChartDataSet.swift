@@ -133,7 +133,18 @@ open class BarChartDataSet: BarLineScatterCandleBubbleChartDataSet, IBarChartDat
         {
             index = 0
         }
-        return index % stackSize == stackSize - 1
+        
+        var theTopStackIndex = stackSize - 1
+        if let theEntries = entries as? [BarChartDataEntry], theEntries.count > index / stackSize {
+            let entry = theEntries[index / stackSize]
+            if let lastGoodIndex = (entry.yValues?.lastIndex(where: { (dValue) -> Bool in
+                dValue != 0.0
+            })) {
+                theTopStackIndex = lastGoodIndex
+            }
+        }
+        
+        return index % stackSize == theTopStackIndex
     }
     
     /// The overall entry count, including counting each stack-value individually
