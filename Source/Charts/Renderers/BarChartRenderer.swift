@@ -834,11 +834,11 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                     let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: set.barRoundingCorners, cornerRadii: cornerRadius)
                     context.addPath(bezierPath.cgPath)
                     #endif
-                    context.fillPath()
+                    context.strokePath()
                 }
                 else
                 {
-                    context.fill(barRect)
+                    context.stroke(barRect)
                 }
             }
         }
